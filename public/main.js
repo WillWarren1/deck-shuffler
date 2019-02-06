@@ -37,10 +37,16 @@ const buildDeck = () => {
 const shuffleDeck = () => {
   for (let i = 51; i >= 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[deckOfCards[i], deckOfCards[j]] = [deckOfCards[j], deckOfCards[i]]
+
+    let posI = deckOfCards[i]
+    let posJ = deckOfCards[j]
+
+    deckOfCards[j] = posI
+    deckOfCards[i] = posJ
   }
   console.log(deckOfCards)
 }
+
 const main = () => {
   if (document.querySelector('h1.hello-world')) {
     document.querySelector('h1.hello-world').textContent = 'Hello, World!'
@@ -49,10 +55,9 @@ const main = () => {
   shuffleDeck()
 }
 const drawCard = () => {
-  deckOfCards.splice[0]
+  deckOfCards.splice(0, 1)
   console.log(deckOfCards)
 }
 
-document.querySelector('.draw').addEventListener('click', drawCard)
-
+document.querySelector('#draw').addEventListener('click', drawCard)
 document.addEventListener('DOMContentLoaded', main)

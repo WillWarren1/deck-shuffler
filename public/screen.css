@@ -11,8 +11,9 @@ body {
   min-height: 100%;
 }
 
-#deck {
+#draw {
   border: solid black;
+  background-color: green;
   width: 35%;
   height: 25rem;
 }
