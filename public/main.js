@@ -54,10 +54,13 @@ const main = () => {
   buildDeck()
   shuffleDeck()
 }
-const drawCard = () => {
-  deckOfCards.splice(0, 1)
-  console.log(deckOfCards)
-}
 
-document.querySelector('#draw').addEventListener('click', drawCard)
+const drawCard = () => {
+  let newCard = deckOfCards.splice(0, 1)
+  console.log(deckOfCards)
+  const _li = document.createElement('li')
+  _li.textContent = newCard
+  document.querySelector('main').appendChild(_li)
+}
 document.addEventListener('DOMContentLoaded', main)
+document.querySelector('#draw').addEventListener('click', drawCard)
