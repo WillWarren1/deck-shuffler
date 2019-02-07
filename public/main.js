@@ -49,7 +49,8 @@ const shuffleDeck = () => {
 
 const main = () => {
   if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
+    document.querySelector('h1.hello-world').textContent =
+      'The Mighty Deck Shuffler!'
   }
   buildDeck()
   shuffleDeck()
@@ -58,9 +59,11 @@ const main = () => {
 const drawCard = () => {
   let newCard = deckOfCards.splice(0, 1)
   console.log(deckOfCards)
-  const _li = document.createElement('li')
-  _li.textContent = newCard
-  document.querySelector('main').appendChild(_li)
+  if (deckOfCards.length > 0) {
+    const _li = document.createElement('li')
+    _li.textContent = newCard
+    document.querySelector('ul').appendChild(_li)
+  }
 }
 document.addEventListener('DOMContentLoaded', main)
 document.querySelector('#draw').addEventListener('click', drawCard)
