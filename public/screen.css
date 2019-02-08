@@ -43,6 +43,7 @@ li {
   height: 7rem;
   width: 5rem;
   text-align: center;
+  border-radius: 5px;
 }
 
 p {
